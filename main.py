@@ -53,12 +53,12 @@ def parser(res):
 
 async def main():
     sess = aiohttp.ClientSession(
-        timeout=aiohttp.ClientTimeout(10),
+        timeout=aiohttp.ClientTimeout(30),
         cookie_jar=aiohttp.DummyCookieJar()
     )
     tasks = [limited_fetch(f"https://www.goodreads.com/quotes?page={x}", sess) for x in range(1, 101)]
     all_pages = await asyncio.gather(*tasks)
-    all_pages = [page for page in all_pages if page is not None]
+    all_pages = [p for p in all_pages if p is not None]
     await sess.close()
 
     all_quotes = []
