@@ -1,5 +1,8 @@
-# A list of most popular quotes of all time
+## A list of most liked quotes
 
-All quotes are inside quotes.json. I skipped quotes that are longer than 2000 characters for my usecase.
+`quotes.json` is a list of all quotes as scraped from [Goodreads Popular Quotes](https://www.goodreads.com/quotes) pages.
 
-I left the scraper for educational purposes. Please don't unncessarily scrape it again unless you really need to.
+You can run the scraper to get an updated list of quotes but I strongly suggest not to do it because the list probably remains unchanged except the last few pages:
+- git clone this repo
+- `$ pip install -r requirements.txt`
+- `$ python main.py`
